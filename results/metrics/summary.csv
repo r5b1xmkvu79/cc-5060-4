@@ -1,0 +1,10 @@
+name,policy,duration_s,mean_sdr_db,mean_sir_db,h_sir_db,p_sir_db,h_crosstalk,p_crosstalk,recomposition_error_db,delivered_over_input_db,residual_energy_fraction,ambiguous_energy_fraction,mask_h_f1,mask_p_f1
+sustain_plus_pulse,residual,4.00,29.992,34.768,46.329,23.208,0.000,0.000,-312.885,-0.000,0.000,0.001,0.940,0.936
+dense_drums_with_sustain,residual,4.00,15.707,24.962,22.792,27.131,0.005,0.000,-313.516,0.000,0.009,0.029,0.391,0.568
+quiet_sustain_loud_pulses,residual,4.00,32.615,42.579,39.111,46.047,0.000,0.000,-313.335,0.000,0.000,0.001,0.979,0.989
+vibrato_sustain,residual,4.00,23.634,28.037,46.049,10.024,0.000,0.002,-313.035,0.000,0.000,0.001,0.903,0.872
+noisy_sustain,residual,4.00,3.678,11.215,38.639,-16.208,0.000,0.152,-313.330,0.000,0.030,0.067,0.316,0.033
+overlapping_attacks,residual,4.00,26.563,33.876,41.679,26.074,0.000,0.000,-313.306,0.000,0.000,0.000,0.962,0.962
+glissando_sustain,residual,4.00,13.296,20.857,39.521,2.193,0.000,0.008,-313.012,-0.000,0.000,0.000,0.936,0.923
+percussive_drone,residual,4.00,5.941,22.755,51.963,-6.454,0.000,0.095,-313.239,-0.000,0.005,0.021,0.460,0.221
+homemade_mix,residual,4.00,19.935,32.407,39.820,24.993,0.000,0.000,-313.530,0.000,0.000,0.001,0.847,0.915

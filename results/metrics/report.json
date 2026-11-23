@@ -1,0 +1,1426 @@
+{
+  "sample_rate": 22050,
+  "duration_s": 4.0,
+  "default_config": {
+    "n_fft": 2048,
+    "hop_length": 512,
+    "win_length": 2048,
+    "window": "hann",
+    "center": true,
+    "pad_mode": "reflect",
+    "kernel_time": 31,
+    "kernel_freq": 31,
+    "mask_kind": "soft",
+    "mask_power": 2.0,
+    "ambiguity_floor_db": -40.0,
+    "shared_policy": "residual",
+    "duplicate_weight": 1.0,
+    "energy_floor_db": -80.0
+  },
+  "scenarios": [
+    {
+      "name": "sustain_plus_pulse",
+      "tags": [
+        "clean",
+        "known-truth"
+      ],
+      "notes": "Dyad A3/E4 with five isolated broadband clicks; sparse transients.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.00011052233280772017,
+        "reconstruction_error_db": -312.88488672713584,
+        "two_component_error_db": -50.88032932655495,
+        "input_energy": 4288.937396632881,
+        "harmonic_energy": 4247.624174462902,
+        "percussive_energy": 31.381710588820386,
+        "residual_energy": 0.03502005101989056,
+        "remix_energy_ratio": 0.9999999999999996,
+        "ambiguous_energy_fraction": 0.0005079214699750101,
+        "ambiguous_bin_fraction": 0.0009812167087188113,
+        "residual_energy_fraction": 8.165204520677726e-06,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 40.87672194592929,
+          "sir_db": 46.32920957464626,
+          "sar_db": 42.33338952700029
+        },
+        "percussive": {
+          "sdr_db": 19.10752629962831,
+          "sir_db": 23.207762909447823,
+          "sar_db": 21.267984541406744
+        },
+        "mean_sdr_db": 29.9921241227788,
+        "mean_sir_db": 34.76848624204705,
+        "mean_sar_db": 31.80068703420352
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9998721745108073,
+          "crosstalk_fraction": 5.435780252432695e-07,
+          "unexplained_fraction": 0.0001272819111673984,
+          "crosstalk_vs_true_percussive_db": -41.350456686444524
+        },
+        "percussive": {
+          "self_fraction": 0.9842587176319202,
+          "crosstalk_fraction": 7.306818008852309e-05,
+          "unexplained_fraction": 0.015668214187991247,
+          "crosstalk_vs_true_harmonic_db": -62.68728438651021
+        }
+      },
+      "energy": {
+        "input_energy": 4288.937396632881,
+        "true_h_energy": 4257.291052721297,
+        "true_p_energy": 31.51038025091003,
+        "est_h_energy": 4247.6241744629015,
+        "est_p_energy": 31.381710588820383,
+        "est_r_energy": 0.03502005101989056,
+        "est_h_over_true_h_db": -0.00987258210255901,
+        "est_p_over_true_p_db": -0.017770311482074495,
+        "harmonic_plus_percussive_over_input_db": -0.004208789059314222,
+        "delivered_over_input_db": -9.643274665532873e-16,
+        "recomposition_error_db": -312.88488672713584,
+        "two_component_recomposition_error_db": -50.88032932655495,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 8.165204520677728e-06,
+        "residual_over_input_db": -50.880329326554985,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.02823006235230502,
+        "percussive": 0.0016873650846450194,
+        "other": 0.97008257256305
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.9082362072947378,
+          "mae": 0.07563199559355707,
+          "precision": 0.9993567753001715,
+          "recall": 0.8875981909069269,
+          "f1": 0.940167923148685
+        },
+        "percussive": {
+          "corr": 0.9177898906903525,
+          "mae": 0.06857283463051192,
+          "precision": 0.8811279570526812,
+          "recall": 0.9985959751287022,
+          "f1": 0.9361915507082862
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/sustain_plus_pulse__mixture.wav",
+        "true_harmonic": "audio/sustain_plus_pulse__true_harmonic.wav",
+        "true_percussive": "audio/sustain_plus_pulse__true_percussive.wav",
+        "est_harmonic": "audio/sustain_plus_pulse__est_harmonic.wav",
+        "est_percussive": "audio/sustain_plus_pulse__est_percussive.wav",
+        "est_residual": "audio/sustain_plus_pulse__est_residual.wav",
+        "remix": "audio/sustain_plus_pulse__remix.wav",
+        "recomposition_diff": "audio/sustain_plus_pulse__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/sustain_plus_pulse__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.9926214022297388,
+        "percussive_energy_fraction_of_input": 0.007346896757142666
+      }
+    },
+    {
+      "name": "dense_drums_with_sustain",
+      "tags": [
+        "clean",
+        "dense",
+        "known-truth",
+        "overlap"
+      ],
+      "notes": "Three-note pad under 168 BPM 16th-note drums; sustained tones overlap hits.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.01620482817313376,
+        "reconstruction_error_db": -313.5163570358358,
+        "two_component_error_db": -20.354961067306647,
+        "input_energy": 2749.0795751505534,
+        "harmonic_energy": 2349.891432871359,
+        "percussive_energy": 177.98325467313362,
+        "residual_energy": 25.33326723538785,
+        "remix_energy_ratio": 0.9999999999999999,
+        "ambiguous_energy_fraction": 0.029311158903853846,
+        "ambiguous_bin_fraction": 0.16357723577235772,
+        "residual_energy_fraction": 0.009215181497247302,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 21.392664143524364,
+          "sir_db": 22.792450771746296,
+          "sar_db": 27.013771575331393
+        },
+        "percussive": {
+          "sdr_db": 10.02229320661341,
+          "sir_db": 27.1310897626529,
+          "sar_db": 10.116035184927686
+        },
+        "mean_sdr_db": 15.707478675068888,
+        "mean_sir_db": 24.961770267199597,
+        "mean_sar_db": 18.56490338012954
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9924410490832153,
+          "crosstalk_fraction": 0.00489714745348049,
+          "unexplained_fraction": 0.0026618034633042464,
+          "crosstalk_vs_true_percussive_db": -15.341192198859208
+        },
+        "percussive": {
+          "self_fraction": 0.9031216104957144,
+          "crosstalk_fraction": 8.713878984782751e-05,
+          "unexplained_fraction": 0.09679125071443784,
+          "crosstalk_vs_true_harmonic_db": -51.8102208845436
+        }
+      },
+      "energy": {
+        "input_energy": 2749.079575150553,
+        "true_h_energy": 2352.950316455124,
+        "true_p_energy": 393.64994824070243,
+        "est_h_energy": 2349.8914328713595,
+        "est_p_energy": 177.98325467313364,
+        "est_r_energy": 25.333267235387854,
+        "est_h_over_true_h_db": -0.0056495902663274596,
+        "est_p_over_true_p_db": -3.4473105448451347,
+        "harmonic_plus_percussive_over_input_db": -0.21957186740074092,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.5163570358358,
+        "two_component_recomposition_error_db": -20.354961067306647,
+        "recomposition_correlation": 0.9999999999999999,
+        "residual_energy_fraction": 0.009215181497247303,
+        "residual_over_input_db": -20.354961067306647,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.0005322642689695571,
+        "percussive": 0.5610187957090123,
+        "other": 0.43844894002201806
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.3987284004679343,
+          "mae": 0.33242774859796514,
+          "precision": 0.2566879705973232,
+          "recall": 0.8179509768357776,
+          "f1": 0.39075110164875976
+        },
+        "percussive": {
+          "corr": 0.2541654637722691,
+          "mae": 0.5341132572866094,
+          "precision": 0.9619102033042899,
+          "recall": 0.402535731363902,
+          "f1": 0.5675611137903427
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/dense_drums_with_sustain__mixture.wav",
+        "true_harmonic": "audio/dense_drums_with_sustain__true_harmonic.wav",
+        "true_percussive": "audio/dense_drums_with_sustain__true_percussive.wav",
+        "est_harmonic": "audio/dense_drums_with_sustain__est_harmonic.wav",
+        "est_percussive": "audio/dense_drums_with_sustain__est_percussive.wav",
+        "est_residual": "audio/dense_drums_with_sustain__est_residual.wav",
+        "remix": "audio/dense_drums_with_sustain__remix.wav",
+        "recomposition_diff": "audio/dense_drums_with_sustain__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/dense_drums_with_sustain__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.8559047681718216,
+        "percussive_energy_fraction_of_input": 0.14319336253449275
+      }
+    },
+    {
+      "name": "quiet_sustain_loud_pulses",
+      "tags": [
+        "clean",
+        "imbalanced",
+        "known-truth"
+      ],
+      "notes": "Sine-ish sustain at -20 dB relative to loud clicks; tests level sensitivity.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.00038934551545221865,
+        "reconstruction_error_db": -313.33450006639976,
+        "two_component_error_db": -38.28587523594167,
+        "input_energy": 84.3178471392793,
+        "harmonic_energy": 53.83752665863619,
+        "percussive_energy": 30.316129419526106,
+        "residual_energy": 0.01251215125305136,
+        "remix_energy_ratio": 1.0000000000000002,
+        "ambiguous_energy_fraction": 0.0006393738498846086,
+        "ambiguous_bin_fraction": 0.000431735351836277,
+        "residual_energy_fraction": 0.0001483926793384956,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 32.42318309739361,
+          "sir_db": 39.1110448846692,
+          "sar_db": 33.47167134868516
+        },
+        "percussive": {
+          "sdr_db": 32.80592457885954,
+          "sir_db": 46.04746989410402,
+          "sar_db": 33.01696011309633
+        },
+        "mean_sdr_db": 32.614553838126575,
+        "mean_sir_db": 42.57925738938661,
+        "mean_sar_db": 33.24431573089075
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9993830868428514,
+          "crosstalk_fraction": 3.3167336471279424e-07,
+          "unexplained_fraction": 0.0006165814837839623,
+          "crosstalk_vs_true_percussive_db": -62.30717398669155
+        },
+        "percussive": {
+          "self_fraction": 0.9990987580089803,
+          "crosstalk_fraction": 7.580857855040339e-07,
+          "unexplained_fraction": 0.0009004839052340063,
+          "crosstalk_vs_true_harmonic_db": -63.703164460049834
+        }
+      },
+      "energy": {
+        "input_energy": 84.31784713927928,
+        "true_h_energy": 53.914868697198976,
+        "true_p_energy": 30.374776780299484,
+        "est_h_energy": 53.8375266586362,
+        "est_p_energy": 30.316129419526106,
+        "est_r_energy": 0.012512151253051357,
+        "est_h_over_true_h_db": -0.006234520582943788,
+        "est_p_over_true_p_db": -0.00839342652296783,
+        "harmonic_plus_percussive_over_input_db": -0.004914799851953764,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.33450006639976,
+        "two_component_recomposition_error_db": -38.28587523594167,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 0.00014839267933849557,
+        "residual_over_input_db": -38.28587523594167,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.0017344726765273566,
+        "percussive": 0.0010236540174501537,
+        "other": 0.9972418733060225
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.9759758771486784,
+          "mae": 0.018634724795706777,
+          "precision": 0.9990147783251232,
+          "recall": 0.9606821411653245,
+          "f1": 0.9794735571118088
+        },
+        "percussive": {
+          "corr": 0.9777472075817911,
+          "mae": 0.017307952860250525,
+          "precision": 0.9796329691312189,
+          "recall": 0.9977851007509049,
+          "f1": 0.9886257192559883
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/quiet_sustain_loud_pulses__mixture.wav",
+        "true_harmonic": "audio/quiet_sustain_loud_pulses__true_harmonic.wav",
+        "true_percussive": "audio/quiet_sustain_loud_pulses__true_percussive.wav",
+        "est_harmonic": "audio/quiet_sustain_loud_pulses__est_harmonic.wav",
+        "est_percussive": "audio/quiet_sustain_loud_pulses__est_percussive.wav",
+        "est_residual": "audio/quiet_sustain_loud_pulses__est_residual.wav",
+        "remix": "audio/quiet_sustain_loud_pulses__remix.wav",
+        "recomposition_diff": "audio/quiet_sustain_loud_pulses__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/quiet_sustain_loud_pulses__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.6394241613894674,
+        "percussive_energy_fraction_of_input": 0.36024137013514257
+      }
+    },
+    {
+      "name": "vibrato_sustain",
+      "tags": [
+        "counterexample",
+        "vibrato",
+        "known-truth"
+      ],
+      "notes": "Counterexample: 6 Hz / +/-60 cent vibrato violates stationary-pitch assumption.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.0008605672977171002,
+        "reconstruction_error_db": -313.03516615798384,
+        "two_component_error_db": -36.328558093160204,
+        "input_energy": 4152.133644366115,
+        "harmonic_energy": 4109.290678683318,
+        "percussive_energy": 16.601793111676198,
+        "residual_energy": 0.9669755973648405,
+        "remix_energy_ratio": 0.9999999999999998,
+        "ambiguous_energy_fraction": 0.0014210609807307532,
+        "ambiguous_bin_fraction": 0.0027081581160639193,
+        "residual_energy_fraction": 0.0002328864338644051,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 38.28807704394815,
+          "sir_db": 46.04936164638421,
+          "sar_db": 39.084054275248114
+        },
+        "percussive": {
+          "sdr_db": 8.97985405643141,
+          "sir_db": 10.024186816507754,
+          "sar_db": 16.092749553028643
+        },
+        "mean_sdr_db": 23.633965550189778,
+        "mean_sir_db": 28.036774231445982,
+        "mean_sar_db": 27.58840191413838
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.998837493789925,
+          "crosstalk_fraction": 8.595381581108171e-07,
+          "unexplained_fraction": 0.0011616466719165386,
+          "crosstalk_vs_true_percussive_db": -36.3065342598742
+        },
+        "percussive": {
+          "self_fraction": 0.8782403768295448,
+          "crosstalk_fraction": 0.001579097960756709,
+          "unexplained_fraction": 0.12018052520969813,
+          "crosstalk_vs_true_harmonic_db": -51.9812503133125
+        }
+      },
+      "energy": {
+        "input_energy": 4152.133644366114,
+        "true_h_energy": 4137.034108122242,
+        "true_p_energy": 15.089868335184196,
+        "est_h_energy": 4109.290678683318,
+        "est_p_energy": 16.601793111676205,
+        "est_r_energy": 0.9669755973648405,
+        "est_h_over_true_h_db": -0.0292223847240921,
+        "est_p_over_true_p_db": 0.41469547056470574,
+        "harmonic_plus_percussive_over_input_db": -0.011364606649999321,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.03516615798384,
+        "two_component_recomposition_error_db": -36.328558093160204,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 0.00023288643386440514,
+        "residual_over_input_db": -36.328558093160204,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.00865139058762061,
+        "percussive": 4.6591572280935485e-05,
+        "other": 0.9913020178400984
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.8182142319634396,
+          "mae": 0.1405150188726959,
+          "precision": 0.9882456526524324,
+          "recall": 0.8313766156809007,
+          "f1": 0.903049320138386
+        },
+        "percussive": {
+          "corr": 0.8642255424004943,
+          "mae": 0.1090189999991695,
+          "precision": 0.7897825066499765,
+          "recall": 0.9739507959479016,
+          "f1": 0.8722512636626777
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/vibrato_sustain__mixture.wav",
+        "true_harmonic": "audio/vibrato_sustain__true_harmonic.wav",
+        "true_percussive": "audio/vibrato_sustain__true_percussive.wav",
+        "est_harmonic": "audio/vibrato_sustain__est_harmonic.wav",
+        "est_percussive": "audio/vibrato_sustain__est_percussive.wav",
+        "est_residual": "audio/vibrato_sustain__est_residual.wav",
+        "remix": "audio/vibrato_sustain__remix.wav",
+        "recomposition_diff": "audio/vibrato_sustain__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/vibrato_sustain__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.9963634272070313,
+        "percussive_energy_fraction_of_input": 0.0036342443735304887
+      }
+    },
+    {
+      "name": "noisy_sustain",
+      "tags": [
+        "counterexample",
+        "noisy-sustain",
+        "known-truth"
+      ],
+      "notes": "Counterexample: 35% broadband noise inside the sustain is claimed as percussive.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.05355164755202204,
+        "reconstruction_error_db": -313.33038549584364,
+        "two_component_error_db": -15.192799695163872,
+        "input_energy": 5259.326037998891,
+        "harmonic_energy": 4462.309489865723,
+        "percussive_energy": 78.64720337032219,
+        "residual_energy": 159.09265334971218,
+        "remix_energy_ratio": 0.9999999999999997,
+        "ambiguous_energy_fraction": 0.06697462100672626,
+        "ambiguous_bin_fraction": 0.387793664143538,
+        "residual_energy_fraction": 0.030249627461819233,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 24.149341975208504,
+          "sir_db": 38.63882986299933,
+          "sar_db": 24.307216936005535
+        },
+        "percussive": {
+          "sdr_db": -16.792702965915062,
+          "sir_db": -16.208050069866697,
+          "sar_db": 8.516018315070152
+        },
+        "mean_sdr_db": 3.678319504646721,
+        "mean_sir_db": 11.215389896566316,
+        "mean_sar_db": 16.411617625537843
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9240073619659198,
+          "crosstalk_fraction": 0.00012227233978468223,
+          "unexplained_fraction": 0.0758703656942954,
+          "crosstalk_vs_true_percussive_db": -11.818234230290885
+        },
+        "percussive": {
+          "self_fraction": 0.01353379270586983,
+          "crosstalk_fraction": 0.15235917288107012,
+          "unexplained_fraction": 0.83410703441306,
+          "crosstalk_vs_true_harmonic_db": -26.417188969012916
+        }
+      },
+      "energy": {
+        "input_energy": 5259.326037998889,
+        "true_h_energy": 5251.347854082539,
+        "true_p_energy": 8.292993672442996,
+        "est_h_energy": 4462.309489865723,
+        "est_p_energy": 78.64720337032219,
+        "est_r_energy": 159.09265334971215,
+        "est_h_over_true_h_db": -0.7071109919519991,
+        "est_p_over_true_p_db": 9.769719500647241,
+        "harmonic_plus_percussive_over_input_db": -0.47191282458515305,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.33038549584364,
+        "two_component_recomposition_error_db": -15.192799695163872,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 0.030249627461819237,
+        "residual_over_input_db": -15.192799695163872,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.14423160800091764,
+        "percussive": 0.007736185996676166,
+        "other": 0.8480322060024063
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.0165172185052273,
+          "mae": 0.6889644833285381,
+          "precision": 0.9925142976914094,
+          "recall": 0.18809369786524122,
+          "f1": 0.3162534645530309
+        },
+        "percussive": {
+          "corr": 0.04701367097327201,
+          "mae": 0.2843068470695206,
+          "precision": 0.017194488093799105,
+          "recall": 0.38919288645690836,
+          "f1": 0.03293395844185912
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/noisy_sustain__mixture.wav",
+        "true_harmonic": "audio/noisy_sustain__true_harmonic.wav",
+        "true_percussive": "audio/noisy_sustain__true_percussive.wav",
+        "est_harmonic": "audio/noisy_sustain__est_harmonic.wav",
+        "est_percussive": "audio/noisy_sustain__est_percussive.wav",
+        "est_residual": "audio/noisy_sustain__est_residual.wav",
+        "remix": "audio/noisy_sustain__remix.wav",
+        "recomposition_diff": "audio/noisy_sustain__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/noisy_sustain__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.9984830406294058,
+        "percussive_energy_fraction_of_input": 0.00157681680362193
+      }
+    },
+    {
+      "name": "overlapping_attacks",
+      "tags": [
+        "counterexample",
+        "overlapping-onsets",
+        "known-truth"
+      ],
+      "notes": "Counterexample: note onsets coincide with transients, so onsets are ambiguous.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 8.014635916700201e-05,
+        "reconstruction_error_db": -313.30585580034057,
+        "two_component_error_db": -46.717755251027675,
+        "input_energy": 2140.7103650967806,
+        "harmonic_energy": 2107.075322660392,
+        "percussive_energy": 30.394268697730634,
+        "residual_energy": 0.04558084654192583,
+        "remix_energy_ratio": 0.9999999999999998,
+        "ambiguous_energy_fraction": 0.00021487130313487497,
+        "ambiguous_bin_fraction": 0.00031959629941127,
+        "residual_energy_fraction": 2.129239306965524e-05,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 35.37934098891646,
+          "sir_db": 41.67911020870334,
+          "sar_db": 36.539817234462525
+        },
+        "percussive": {
+          "sdr_db": 17.746126228905073,
+          "sir_db": 26.073668162849536,
+          "sar_db": 18.44722493647437
+        },
+        "mean_sdr_db": 26.56273360891077,
+        "mean_sir_db": 33.87638918577644,
+        "mean_sar_db": 27.493521085468448
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9996370427143803,
+          "crosstalk_fraction": 1.4086380662851794e-06,
+          "unexplained_fraction": 0.0003615486475533336,
+          "crosstalk_vs_true_percussive_db": -40.10071206866213
+        },
+        "percussive": {
+          "self_fraction": 0.9765004859097252,
+          "crosstalk_fraction": 4.015023851081056e-05,
+          "unexplained_fraction": 0.02345936385176417,
+          "crosstalk_vs_true_harmonic_db": -62.380086071541704
+        }
+      },
+      "energy": {
+        "input_energy": 2140.7103650967806,
+        "true_h_energy": 2111.0009812267976,
+        "true_p_energy": 30.377406167327727,
+        "est_h_energy": 2107.075322660392,
+        "est_p_energy": 30.39426869773063,
+        "est_r_energy": 0.045580846541925846,
+        "est_h_over_true_h_db": -0.00808374350122352,
+        "est_p_over_true_p_db": 0.002410104414305891,
+        "harmonic_plus_percussive_over_input_db": -0.001765536776283934,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.30585580034057,
+        "two_component_recomposition_error_db": -46.717755251027675,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 2.1292393069655247e-05,
+        "residual_over_input_db": -46.71775525102768,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.0017255883372014947,
+        "percussive": 0.0018359997783101473,
+        "other": 0.9964384118844883
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.9497826113911138,
+          "mae": 0.04331893321306526,
+          "precision": 0.9939063502245029,
+          "recall": 0.9321702511655888,
+          "f1": 0.9620488940628639
+        },
+        "percussive": {
+          "corr": 0.9497963795721298,
+          "mae": 0.04261966076466833,
+          "precision": 0.9349649283318084,
+          "recall": 0.9907093229924059,
+          "f1": 0.9620302816348945
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/overlapping_attacks__mixture.wav",
+        "true_harmonic": "audio/overlapping_attacks__true_harmonic.wav",
+        "true_percussive": "audio/overlapping_attacks__true_percussive.wav",
+        "est_harmonic": "audio/overlapping_attacks__est_harmonic.wav",
+        "est_percussive": "audio/overlapping_attacks__est_percussive.wav",
+        "est_residual": "audio/overlapping_attacks__est_residual.wav",
+        "remix": "audio/overlapping_attacks__remix.wav",
+        "recomposition_diff": "audio/overlapping_attacks__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/overlapping_attacks__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.9861217171858561,
+        "percussive_energy_fraction_of_input": 0.01419033918021618
+      }
+    },
+    {
+      "name": "glissando_sustain",
+      "tags": [
+        "counterexample",
+        "glissando",
+        "known-truth"
+      ],
+      "notes": "Counterexample: octave glide violates stationarity; median line tracking drifts.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 1.6609740817041948e-06,
+        "reconstruction_error_db": -313.01209544279294,
+        "two_component_error_db": -70.74458554672805,
+        "input_energy": 5157.158947302709,
+        "harmonic_energy": 5080.532562232996,
+        "percussive_energy": 37.73423266455583,
+        "residual_energy": 0.00043446216517071975,
+        "remix_energy_ratio": 1.0,
+        "ambiguous_energy_fraction": 9.679667816811231e-06,
+        "ambiguous_bin_fraction": 0.0,
+        "residual_energy_fraction": 8.424447832812126e-08,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 27.11165146686268,
+          "sir_db": 39.52069944907668,
+          "sar_db": 27.368973705298956
+        },
+        "percussive": {
+          "sdr_db": -0.5194916674664574,
+          "sir_db": 2.1929354241007406,
+          "sar_db": 4.861425418795706
+        },
+        "mean_sdr_db": 13.29607989969811,
+        "mean_sir_db": 20.85681743658871,
+        "mean_sar_db": 16.11519956204733
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.995918976614633,
+          "crosstalk_fraction": 1.0582482765570449e-07,
+          "unexplained_fraction": 0.004080917560539077,
+          "crosstalk_vs_true_percussive_db": -44.96912689658664
+        },
+        "percussive": {
+          "self_fraction": 0.4423408608079394,
+          "crosstalk_fraction": 0.008397099116676078,
+          "unexplained_fraction": 0.5492620400753845,
+          "crosstalk_vs_true_harmonic_db": -42.101445452441304
+        }
+      },
+      "energy": {
+        "input_energy": 5157.158947302709,
+        "true_h_energy": 5140.547158646175,
+        "true_p_energy": 16.88144035723775,
+        "est_h_energy": 5080.532562232994,
+        "est_p_energy": 37.73423266455585,
+        "est_r_energy": 0.0004344621651707199,
+        "est_h_over_true_h_db": -0.05100108462855257,
+        "est_p_over_true_p_db": 3.493260242077081,
+        "harmonic_plus_percussive_over_input_db": -6.783957205533663e-05,
+        "delivered_over_input_db": -9.643274665532873e-16,
+        "recomposition_error_db": -313.01209544279294,
+        "two_component_recomposition_error_db": -70.74458554672805,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 8.424447832812132e-08,
+        "residual_over_input_db": -70.7445855467281,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.0007335385100498543,
+        "percussive": 6.329859810814688e-08,
+        "other": 0.999266398191352
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.8948530584305755,
+          "mae": 0.09398154312078114,
+          "precision": 0.99912315663611,
+          "recall": 0.8800730234517624,
+          "f1": 0.9358270803001456
+        },
+        "percussive": {
+          "corr": 0.8949382137656737,
+          "mae": 0.09387283686129307,
+          "precision": 0.8578084699226225,
+          "recall": 0.998934211801182,
+          "f1": 0.9230080572963294
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/glissando_sustain__mixture.wav",
+        "true_harmonic": "audio/glissando_sustain__true_harmonic.wav",
+        "true_percussive": "audio/glissando_sustain__true_percussive.wav",
+        "est_harmonic": "audio/glissando_sustain__est_harmonic.wav",
+        "est_percussive": "audio/glissando_sustain__est_percussive.wav",
+        "est_residual": "audio/glissando_sustain__est_residual.wav",
+        "remix": "audio/glissando_sustain__remix.wav",
+        "recomposition_diff": "audio/glissando_sustain__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/glissando_sustain__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.9967788875956166,
+        "percussive_energy_fraction_of_input": 0.0032733992746271784
+      }
+    },
+    {
+      "name": "percussive_drone",
+      "tags": [
+        "counterexample",
+        "modulated-drone",
+        "known-truth"
+      ],
+      "notes": "Counterexample: hard-gated 8 Hz drone creates periodic transients in a tonal source.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.008007188860366433,
+        "reconstruction_error_db": -313.23885615459756,
+        "two_component_error_db": -23.457809387483607,
+        "input_energy": 7313.5001569454735,
+        "harmonic_energy": 6810.739643467428,
+        "percussive_energy": 31.78101552478882,
+        "residual_energy": 32.98711513595575,
+        "remix_energy_ratio": 0.9999999999999999,
+        "ambiguous_energy_fraction": 0.021047368088617624,
+        "ambiguous_bin_fraction": 0.013383795906924586,
+        "residual_energy_fraction": 0.004510441570802264,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 21.453189138991448,
+          "sir_db": 51.963323903727485,
+          "sar_db": 21.457080122828707
+        },
+        "percussive": {
+          "sdr_db": -9.570780030406656,
+          "sir_db": -6.454245644055563,
+          "sar_db": 0.6758337909270019
+        },
+        "mean_sdr_db": 5.941204554292396,
+        "mean_sir_db": 22.754539129835962,
+        "mean_sar_db": 11.066456956877854
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9864721538946782,
+          "crosstalk_fraction": 7.085277352347092e-09,
+          "unexplained_fraction": 0.013527839020044619,
+          "crosstalk_vs_true_percussive_db": -47.65132169908968
+        },
+        "percussive": {
+          "self_fraction": 0.08907811683921214,
+          "crosstalk_fraction": 0.09480941594448743,
+          "unexplained_fraction": 0.8161124672163005,
+          "crosstalk_vs_true_harmonic_db": -33.84933943699865
+        }
+      },
+      "energy": {
+        "input_energy": 7313.500156945475,
+        "true_h_energy": 7310.602748103541,
+        "true_p_energy": 2.8098510843402087,
+        "est_h_energy": 6810.739643467428,
+        "est_p_energy": 31.781015524788817,
+        "est_r_energy": 32.987115135955754,
+        "est_h_over_true_h_db": -0.3075890668261606,
+        "est_p_over_true_p_db": 10.53484466555962,
+        "harmonic_plus_percussive_over_input_db": -0.16630492816118575,
+        "delivered_over_input_db": -1.4464911998299308e-15,
+        "recomposition_error_db": -313.23885615459756,
+        "two_component_recomposition_error_db": -23.457809387483614,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 0.004510441570802266,
+        "residual_over_input_db": -23.457809387483614,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.09818067057679926,
+        "percussive": 1.2891562267007491e-08,
+        "other": 0.9018193165316384
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.3114336165097723,
+          "mae": 0.5721328172530478,
+          "precision": 1.0,
+          "recall": 0.29847694260329993,
+          "f1": 0.45973391257127344
+        },
+        "percussive": {
+          "corr": 0.3688112051626237,
+          "mae": 0.4757374082142557,
+          "precision": 0.12431802531913766,
+          "recall": 1.0,
+          "f1": 0.22114388014698955
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/percussive_drone__mixture.wav",
+        "true_harmonic": "audio/percussive_drone__true_harmonic.wav",
+        "true_percussive": "audio/percussive_drone__true_percussive.wav",
+        "est_harmonic": "audio/percussive_drone__est_harmonic.wav",
+        "est_percussive": "audio/percussive_drone__est_percussive.wav",
+        "est_residual": "audio/percussive_drone__est_residual.wav",
+        "remix": "audio/percussive_drone__remix.wav",
+        "recomposition_diff": "audio/percussive_drone__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/percussive_drone__harmonic_plus_percussive.wav"
+      },
+      "true_component_spectra": {
+        "harmonic_energy_fraction_of_input": 0.9996038273357823,
+        "percussive_energy_fraction_of_input": 0.0003842005912410836
+      }
+    },
+    {
+      "name": "homemade_mix",
+      "tags": [
+        "homemade",
+        "known-truth-partial",
+        "overlap",
+        "noise-bed"
+      ],
+      "notes": "Hand-built: 3-note pad + irregular/overlapping clicks + noise bed. The bed has no ground-truth class; it is expected to split across residual.",
+      "duration_s": 4.0,
+      "diagnostic": {
+        "config": {
+          "n_fft": 2048,
+          "hop_length": 512,
+          "win_length": 2048,
+          "window": "hann",
+          "center": true,
+          "pad_mode": "reflect",
+          "kernel_time": 31,
+          "kernel_freq": 31,
+          "mask_kind": "soft",
+          "mask_power": 2.0,
+          "ambiguity_floor_db": -40.0,
+          "shared_policy": "residual",
+          "duplicate_weight": 1.0,
+          "energy_floor_db": -80.0
+        },
+        "sample_rate": 22050,
+        "duration_s": 4.0,
+        "n_frames": 174,
+        "n_bins": 1025,
+        "mask_sum_max_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16,
+        "shared_energy_duplicated": 0.00027446188404713214,
+        "reconstruction_error_db": -313.530428331169,
+        "two_component_error_db": -44.87256867603358,
+        "input_energy": 1946.9207354993698,
+        "harmonic_energy": 1904.3961127475527,
+        "percussive_energy": 27.340724182700555,
+        "residual_energy": 0.06340031314665395,
+        "remix_energy_ratio": 1.0,
+        "ambiguous_energy_fraction": 0.0014678262046320654,
+        "ambiguous_bin_fraction": 0.0018446874123913652,
+        "residual_energy_fraction": 3.256440387666439e-05,
+        "frac_ambiguous_to_residual": 1.0
+      },
+      "bss": {
+        "harmonic": {
+          "sdr_db": 29.28928880406115,
+          "sir_db": 39.81993299592392,
+          "sar_db": 29.692167179210365
+        },
+        "percussive": {
+          "sdr_db": 10.580022256416797,
+          "sir_db": 24.993181816842238,
+          "sar_db": 10.75387654475724
+        },
+        "mean_sdr_db": 19.934655530238974,
+        "mean_sir_db": 32.40655740638308,
+        "mean_sar_db": 20.223021861983803
+      },
+      "leakage": {
+        "harmonic": {
+          "self_fraction": 0.9987154036547353,
+          "crosstalk_fraction": 1.7531615795405704e-05,
+          "unexplained_fraction": 0.0012670647294691362,
+          "crosstalk_vs_true_percussive_db": -27.83758736561299
+        },
+        "percussive": {
+          "self_fraction": 0.9097762994005488,
+          "crosstalk_fraction": 0.00019123538666177746,
+          "unexplained_fraction": 0.09003246521278929,
+          "crosstalk_vs_true_harmonic_db": -54.29454370889474
+        }
+      },
+      "energy": {
+        "input_energy": 1946.92073549937,
+        "true_h_energy": 1405.5058023935942,
+        "true_p_energy": 20.292612738215233,
+        "est_h_energy": 1904.3961127475525,
+        "est_p_energy": 27.340724182700555,
+        "est_r_energy": 0.06340031314665394,
+        "est_h_over_true_h_db": 1.3192464346302328,
+        "est_p_over_true_p_db": 1.2947204625949362,
+        "harmonic_plus_percussive_over_input_db": -0.012252130893608687,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.530428331169,
+        "two_component_recomposition_error_db": -44.87256867603358,
+        "recomposition_correlation": 1.0,
+        "residual_energy_fraction": 3.256440387666437e-05,
+        "residual_over_input_db": -44.87256867603358,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "mask_max_overshoot": 2.220446049250313e-16
+      },
+      "residual_composition": {
+        "harmonic": 0.04200988018406628,
+        "percussive": 0.09915853574655767,
+        "other": 0.8588315840693761
+      },
+      "mask_quality": {
+        "harmonic": {
+          "corr": 0.8259298820760294,
+          "mae": 0.15562360426678123,
+          "precision": 0.9462417772026313,
+          "recall": 0.7668341708542713,
+          "f1": 0.8471434433153918
+        },
+        "percussive": {
+          "corr": 0.8378300517716382,
+          "mae": 0.15157413433516587,
+          "precision": 0.8686935448336638,
+          "recall": 0.9669251754896852,
+          "f1": 0.9151809675781533
+        }
+      },
+      "policy": "residual",
+      "reference_is_estimate_only": true,
+      "audio": {
+        "mixture": "audio/homemade_mix__mixture.wav",
+        "true_harmonic": "audio/homemade_mix__true_harmonic.wav",
+        "true_percussive": "audio/homemade_mix__true_percussive.wav",
+        "est_harmonic": "audio/homemade_mix__est_harmonic.wav",
+        "est_percussive": "audio/homemade_mix__est_percussive.wav",
+        "est_residual": "audio/homemade_mix__est_residual.wav",
+        "remix": "audio/homemade_mix__remix.wav",
+        "recomposition_diff": "audio/homemade_mix__recomposition_diff.wav",
+        "harmonic_plus_percussive": "audio/homemade_mix__harmonic_plus_percussive.wav",
+        "noise_bed": "audio/homemade_mix__noise_bed.wav"
+      },
+      "bed_composition": {
+        "harmonic": 2.3189593474422115e-06,
+        "percussive": 3.568525251663674e-06,
+        "other": 0.9999941125154009
+      },
+      "residual_composition_vs_bed": {
+        "bed": 0.024219421220455315,
+        "other": 0.9757805787795447
+      }
+    }
+  ],
+  "policy_comparison": {
+    "dense_drums_with_sustain": {
+      "complementary": {
+        "ambiguous_energy_fraction": 0.029311158903853846,
+        "residual_energy_fraction": 0.0,
+        "shared_energy_duplicated": 0.01620482817313376,
+        "mask_sum_max_abs_error": 0.0,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.7337693313241,
+        "mean_sdr_db": 16.63631436188726,
+        "mean_sir_db": 23.964560575589605
+      },
+      "residual": {
+        "ambiguous_energy_fraction": 0.029311158903853846,
+        "residual_energy_fraction": 0.009215181497247302,
+        "shared_energy_duplicated": 0.01620482817313376,
+        "mask_sum_max_abs_error": 2.220446049250313e-16,
+        "delivered_over_input_db": 0.0,
+        "recomposition_error_db": -313.5163570358358,
+        "mean_sdr_db": 15.707478675068888,
+        "mean_sir_db": 24.961770267199597
+      },
+      "shared": {
+        "ambiguous_energy_fraction": 0.029311158903853846,
+        "residual_energy_fraction": 0.0,
+        "shared_energy_duplicated": 0.01620482817313376,
+        "mask_sum_max_abs_error": 1.0,
+        "delivered_over_input_db": 0.6273923889950449,
+        "recomposition_error_db": -15.218587770442074,
+        "mean_sdr_db": 16.409310908638968,
+        "mean_sir_db": 19.92516305122754
+      }
+    }
+  },
+  "window_scales": {
+    "dense_drums_with_sustain": {
+      "512": {
+        "mean_sdr_db": 8.565579188651554,
+        "mean_sir_db": 14.420634193148333,
+        "recomposition_error_db": -314.6311737528948,
+        "ambiguous_energy_fraction": 0.21390376767566066,
+        "mask_quality_harmonic_f1": 0.3190047737422179,
+        "mask_quality_percussive_f1": 0.5527400179983896
+      },
+      "1024": {
+        "mean_sdr_db": 16.087444034718725,
+        "mean_sir_db": 21.154960524718238,
+        "recomposition_error_db": -314.06702676667044,
+        "ambiguous_energy_fraction": 0.04712251584310447,
+        "mask_quality_harmonic_f1": 0.4532066904122144,
+        "mask_quality_percussive_f1": 0.596946510333985
+      },
+      "2048": {
+        "mean_sdr_db": 15.707478675068888,
+        "mean_sir_db": 24.961770267199597,
+        "recomposition_error_db": -313.5163570358358,
+        "ambiguous_energy_fraction": 0.029311158903853846,
+        "mask_quality_harmonic_f1": 0.39075110164875976,
+        "mask_quality_percussive_f1": 0.5675611137903427
+      },
+      "4096": {
+        "mean_sdr_db": 13.943297458612676,
+        "mean_sir_db": 20.324933841951676,
+        "recomposition_error_db": -312.8535390805555,
+        "ambiguous_energy_fraction": 0.041578726970927786,
+        "mask_quality_harmonic_f1": 0.3104496516782774,
+        "mask_quality_percussive_f1": 0.49718041671243907
+      }
+    }
+  },
+  "homemade": {
+    "name": "homemade_mix",
+    "tags": [
+      "homemade",
+      "known-truth-partial",
+      "overlap",
+      "noise-bed"
+    ],
+    "notes": "Hand-built: 3-note pad + irregular/overlapping clicks + noise bed. The bed has no ground-truth class; it is expected to split across residual.",
+    "duration_s": 4.0,
+    "diagnostic": {
+      "config": {
+        "n_fft": 2048,
+        "hop_length": 512,
+        "win_length": 2048,
+        "window": "hann",
+        "center": true,
+        "pad_mode": "reflect",
+        "kernel_time": 31,
+        "kernel_freq": 31,
+        "mask_kind": "soft",
+        "mask_power": 2.0,
+        "ambiguity_floor_db": -40.0,
+        "shared_policy": "residual",
+        "duplicate_weight": 1.0,
+        "energy_floor_db": -80.0
+      },
+      "sample_rate": 22050,
+      "duration_s": 4.0,
+      "n_frames": 174,
+      "n_bins": 1025,
+      "mask_sum_max_error": 2.220446049250313e-16,
+      "mask_max_overshoot": 2.220446049250313e-16,
+      "shared_energy_duplicated": 0.00027446188404713214,
+      "reconstruction_error_db": -313.530428331169,
+      "two_component_error_db": -44.87256867603358,
+      "input_energy": 1946.9207354993698,
+      "harmonic_energy": 1904.3961127475527,
+      "percussive_energy": 27.340724182700555,
+      "residual_energy": 0.06340031314665395,
+      "remix_energy_ratio": 1.0,
+      "ambiguous_energy_fraction": 0.0014678262046320654,
+      "ambiguous_bin_fraction": 0.0018446874123913652,
+      "residual_energy_fraction": 3.256440387666439e-05,
+      "frac_ambiguous_to_residual": 1.0
+    },
+    "bss": {
+      "harmonic": {
+        "sdr_db": 29.28928880406115,
+        "sir_db": 39.81993299592392,
+        "sar_db": 29.692167179210365
+      },
+      "percussive": {
+        "sdr_db": 10.580022256416797,
+        "sir_db": 24.993181816842238,
+        "sar_db": 10.75387654475724
+      },
+      "mean_sdr_db": 19.934655530238974,
+      "mean_sir_db": 32.40655740638308,
+      "mean_sar_db": 20.223021861983803
+    },
+    "leakage": {
+      "harmonic": {
+        "self_fraction": 0.9987154036547353,
+        "crosstalk_fraction": 1.7531615795405704e-05,
+        "unexplained_fraction": 0.0012670647294691362,
+        "crosstalk_vs_true_percussive_db": -27.83758736561299
+      },
+      "percussive": {
+        "self_fraction": 0.9097762994005488,
+        "crosstalk_fraction": 0.00019123538666177746,
+        "unexplained_fraction": 0.09003246521278929,
+        "crosstalk_vs_true_harmonic_db": -54.29454370889474
+      }
+    },
+    "energy": {
+      "input_energy": 1946.92073549937,
+      "true_h_energy": 1405.5058023935942,
+      "true_p_energy": 20.292612738215233,
+      "est_h_energy": 1904.3961127475525,
+      "est_p_energy": 27.340724182700555,
+      "est_r_energy": 0.06340031314665394,
+      "est_h_over_true_h_db": 1.3192464346302328,
+      "est_p_over_true_p_db": 1.2947204625949362,
+      "harmonic_plus_percussive_over_input_db": -0.012252130893608687,
+      "delivered_over_input_db": 0.0,
+      "recomposition_error_db": -313.530428331169,
+      "two_component_recomposition_error_db": -44.87256867603358,
+      "recomposition_correlation": 1.0,
+      "residual_energy_fraction": 3.256440387666437e-05,
+      "residual_over_input_db": -44.87256867603358,
+      "mask_sum_max_abs_error": 2.220446049250313e-16,
+      "mask_max_overshoot": 2.220446049250313e-16
+    },
+    "residual_composition": {
+      "harmonic": 0.04200988018406628,
+      "percussive": 0.09915853574655767,
+      "other": 0.8588315840693761
+    },
+    "mask_quality": {
+      "harmonic": {
+        "corr": 0.8259298820760294,
+        "mae": 0.15562360426678123,
+        "precision": 0.9462417772026313,
+        "recall": 0.7668341708542713,
+        "f1": 0.8471434433153918
+      },
+      "percussive": {
+        "corr": 0.8378300517716382,
+        "mae": 0.15157413433516587,
+        "precision": 0.8686935448336638,
+        "recall": 0.9669251754896852,
+        "f1": 0.9151809675781533
+      }
+    },
+    "policy": "residual",
+    "reference_is_estimate_only": true,
+    "audio": {
+      "mixture": "audio/homemade_mix__mixture.wav",
+      "true_harmonic": "audio/homemade_mix__true_harmonic.wav",
+      "true_percussive": "audio/homemade_mix__true_percussive.wav",
+      "est_harmonic": "audio/homemade_mix__est_harmonic.wav",
+      "est_percussive": "audio/homemade_mix__est_percussive.wav",
+      "est_residual": "audio/homemade_mix__est_residual.wav",
+      "remix": "audio/homemade_mix__remix.wav",
+      "recomposition_diff": "audio/homemade_mix__recomposition_diff.wav",
+      "harmonic_plus_percussive": "audio/homemade_mix__harmonic_plus_percussive.wav",
+      "noise_bed": "audio/homemade_mix__noise_bed.wav"
+    },
+    "bed_composition": {
+      "harmonic": 2.3189593474422115e-06,
+      "percussive": 3.568525251663674e-06,
+      "other": 0.9999941125154009
+    },
+    "residual_composition_vs_bed": {
+      "bed": 0.024219421220455315,
+      "other": 0.9757805787795447
+    }
+  }
+}
