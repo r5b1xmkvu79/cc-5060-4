@@ -1,0 +1,317 @@
+{
+  "format": 1,
+  "sample_rate": 22050,
+  "seed": 0,
+  "hash_scheme": "sha256; WAV files hashed on their audio data chunk (libsndfile PEAK chunks embed a wall-clock timestamp)",
+  "generator": {
+    "script": "scripts/make_sample_pack.py",
+    "module": "hpss.samplepack",
+    "rebuild": "scripts/rebuild_sample_pack.py"
+  },
+  "entries": {
+    "sustained_chords_sparse_drums": {
+      "seed": 0,
+      "sample_rate": 22050,
+      "duration_s": 5.0,
+      "params": {
+        "duration_s": 5.0,
+        "chord_plan": [
+          {
+            "start_s": 0.0,
+            "duration_s": 1.7,
+            "freqs_hz": [
+              130.81,
+              164.81,
+              196.0
+            ]
+          },
+          {
+            "start_s": 1.7,
+            "duration_s": 1.7,
+            "freqs_hz": [
+              174.61,
+              220.0,
+              261.63
+            ]
+          },
+          {
+            "start_s": 3.4,
+            "duration_s": 1.6,
+            "freqs_hz": [
+              196.0,
+              246.94,
+              293.66
+            ]
+          }
+        ],
+        "hits": [
+          {
+            "time_s": 0.45,
+            "kind": "kick",
+            "amplitude": 0.6
+          },
+          {
+            "time_s": 1.75,
+            "kind": "snare",
+            "amplitude": 0.5
+          },
+          {
+            "time_s": 2.6,
+            "kind": "hat",
+            "amplitude": 0.35
+          },
+          {
+            "time_s": 3.3,
+            "kind": "kick",
+            "amplitude": 0.55
+          },
+          {
+            "time_s": 4.2,
+            "kind": "snare",
+            "amplitude": 0.45
+          }
+        ]
+      },
+      "coefficients": {
+        "harmonic_gain": 1.0,
+        "percussive_gain": 0.9,
+        "peak_target": 0.95,
+        "scale": 1.1245726914611693,
+        "construction": "mixture = scale * (harmonic_gain * H + percussive_gain * P)"
+      },
+      "base_owner": {
+        "chords": "harmonic",
+        "drums": "percussive"
+      },
+      "assignable_layer": null,
+      "segments": [],
+      "decomposer_config": {
+        "n_fft": 2048,
+        "hop_length": 512,
+        "win_length": 2048,
+        "window": "hann",
+        "center": true,
+        "pad_mode": "reflect",
+        "kernel_time": 31,
+        "kernel_freq": 31,
+        "mask_kind": "soft",
+        "mask_power": 2.0,
+        "ambiguity_floor_db": -40.0,
+        "shared_policy": "residual",
+        "duplicate_weight": 1.0,
+        "energy_floor_db": -80.0
+      },
+      "null_test_db": {
+        "in_memory": -305.2679152679965,
+        "wav_roundtrip": -132.97542578104813
+      },
+      "files": {
+        "true_harmonic": "sources/sustained_chords_sparse_drums__true_harmonic.wav",
+        "true_percussive": "sources/sustained_chords_sparse_drums__true_percussive.wav",
+        "mixture": "mixtures/sustained_chords_sparse_drums__mixture.wav",
+        "null_derived_percussive": "mixtures/sustained_chords_sparse_drums__null_derived_percussive.wav",
+        "oracle_mask_harmonic": "reference/sustained_chords_sparse_drums__oracle_mask_harmonic.npy",
+        "oracle_mask_percussive": "reference/sustained_chords_sparse_drums__oracle_mask_percussive.npy",
+        "est_harmonic": "estimates/sustained_chords_sparse_drums__est_harmonic.wav",
+        "est_percussive": "estimates/sustained_chords_sparse_drums__est_percussive.wav",
+        "est_residual": "estimates/sustained_chords_sparse_drums__est_residual.wav",
+        "evidence": "evidence/sustained_chords_sparse_drums__evidence.json"
+      },
+      "edit": null,
+      "notes": "Sustained C/F/G triads under five sparse drum hits; clean morphology case.",
+      "tags": [
+        "known-truth",
+        "sustained-chords",
+        "sparse-drums"
+      ]
+    },
+    "brush_sweep_over_sustain": {
+      "seed": 0,
+      "sample_rate": 22050,
+      "duration_s": 5.5,
+      "params": {
+        "duration_s": 5.5,
+        "sustain_freqs_hz": [
+          220.0,
+          277.18
+        ],
+        "sweeps": [
+          {
+            "start_s": 0.8,
+            "duration_s": 1.6,
+            "low_hz": 1800.0,
+            "high_hz": 6500.0,
+            "sweep_up": true
+          },
+          {
+            "start_s": 3.2,
+            "duration_s": 1.4,
+            "low_hz": 1600.0,
+            "high_hz": 5500.0,
+            "sweep_up": false
+          }
+        ],
+        "hits": [
+          {
+            "time_s": 0.4,
+            "kind": "kick",
+            "amplitude": 0.45
+          },
+          {
+            "time_s": 5.0,
+            "kind": "snare",
+            "amplitude": 0.4
+          }
+        ],
+        "segment_grid": {
+          "start_s": 0.75,
+          "step_s": 0.5,
+          "count": 8
+        }
+      },
+      "coefficients": {
+        "harmonic_gain": 1.0,
+        "percussive_gain": 1.0,
+        "peak_target": 0.95,
+        "scale": 1.3111912463616278,
+        "construction": "mixture = scale * (harmonic_gain * H + percussive_gain * P)"
+      },
+      "base_owner": {
+        "sustain": "harmonic",
+        "sweep": "percussive",
+        "hits": "percussive"
+      },
+      "assignable_layer": "sweep",
+      "segments": [
+        {
+          "index": 0,
+          "start_s": 0.75,
+          "end_s": 1.25,
+          "owner": "percussive"
+        },
+        {
+          "index": 1,
+          "start_s": 1.25,
+          "end_s": 1.75,
+          "owner": "percussive"
+        },
+        {
+          "index": 2,
+          "start_s": 1.75,
+          "end_s": 2.25,
+          "owner": "percussive"
+        },
+        {
+          "index": 3,
+          "start_s": 2.25,
+          "end_s": 2.75,
+          "owner": "percussive"
+        },
+        {
+          "index": 4,
+          "start_s": 2.75,
+          "end_s": 3.25,
+          "owner": "percussive"
+        },
+        {
+          "index": 5,
+          "start_s": 3.25,
+          "end_s": 3.75,
+          "owner": "percussive"
+        },
+        {
+          "index": 6,
+          "start_s": 3.75,
+          "end_s": 4.25,
+          "owner": "percussive"
+        },
+        {
+          "index": 7,
+          "start_s": 4.25,
+          "end_s": 4.75,
+          "owner": "percussive"
+        }
+      ],
+      "decomposer_config": {
+        "n_fft": 2048,
+        "hop_length": 512,
+        "win_length": 2048,
+        "window": "hann",
+        "center": true,
+        "pad_mode": "reflect",
+        "kernel_time": 31,
+        "kernel_freq": 31,
+        "mask_kind": "soft",
+        "mask_power": 2.0,
+        "ambiguity_floor_db": -40.0,
+        "shared_policy": "residual",
+        "duplicate_weight": 1.0,
+        "energy_floor_db": -80.0
+      },
+      "null_test_db": {
+        "in_memory": -314.46575138027197,
+        "wav_roundtrip": -142.51771164743184
+      },
+      "files": {
+        "true_harmonic": "sources/brush_sweep_over_sustain__true_harmonic.wav",
+        "true_percussive": "sources/brush_sweep_over_sustain__true_percussive.wav",
+        "mixture": "mixtures/brush_sweep_over_sustain__mixture.wav",
+        "null_derived_percussive": "mixtures/brush_sweep_over_sustain__null_derived_percussive.wav",
+        "oracle_mask_harmonic": "reference/brush_sweep_over_sustain__oracle_mask_harmonic.npy",
+        "oracle_mask_percussive": "reference/brush_sweep_over_sustain__oracle_mask_percussive.npy",
+        "est_harmonic": "estimates/brush_sweep_over_sustain__est_harmonic.wav",
+        "est_percussive": "estimates/brush_sweep_over_sustain__est_percussive.wav",
+        "est_residual": "estimates/brush_sweep_over_sustain__est_residual.wav",
+        "evidence": "evidence/brush_sweep_over_sustain__evidence.json"
+      },
+      "edit": {
+        "edit": "edits/brush_sweep_over_sustain__segment_edit.json",
+        "edited_true_harmonic": "edits/brush_sweep_over_sustain__edited_true_harmonic.wav",
+        "edited_true_percussive": "edits/brush_sweep_over_sustain__edited_true_percussive.wav",
+        "edited_mixture": "edits/brush_sweep_over_sustain__edited_mixture.wav",
+        "edited_mask_harmonic": "edits/brush_sweep_over_sustain__edited_mask_harmonic.npy",
+        "edited_mask_percussive": "edits/brush_sweep_over_sustain__edited_mask_percussive.npy",
+        "verification": "edits/brush_sweep_over_sustain__verification.json"
+      },
+      "notes": "Two brush sweeps over an A3/C#4 dyad. The sweep layer is morphologically ambiguous (sustained yet noisy); its 8 segments can be re-owned per stem.",
+      "tags": [
+        "known-truth",
+        "brush-sweep",
+        "editable-attribution",
+        "ambiguous"
+      ]
+    }
+  },
+  "audition_project": "audition/project.json",
+  "files": {
+    "sources/sustained_chords_sparse_drums__true_harmonic.wav": "9339cccdefdbc3c6626826e5ce72181f7f3f1a612a71fd9176c56ede6b765d63",
+    "sources/sustained_chords_sparse_drums__true_percussive.wav": "e95b687bf16e39871516557e13b2ea1ff2726459cbf7b5a250b677df918b44bc",
+    "mixtures/sustained_chords_sparse_drums__mixture.wav": "d2b6d806009eac54562299ecc21219722f4c493f86d5cfb4ad82e6c21287c866",
+    "mixtures/sustained_chords_sparse_drums__null_derived_percussive.wav": "f1972544c6f41f308e0e13b314afee0e8c28d081be5724590733bb006a44fa07",
+    "reference/sustained_chords_sparse_drums__oracle_mask_harmonic.npy": "70ab4086a9c6a6566c283f29e045a22efda65d02b4e213698510e523f8d79908",
+    "reference/sustained_chords_sparse_drums__oracle_mask_percussive.npy": "19bdf46b712024161c673125bbf44947c67a98f478b525b1cd3386ea41a57db4",
+    "estimates/sustained_chords_sparse_drums__est_harmonic.wav": "fa7c45bf78bbae75c26fc6bfde95789e355627d81d48b746087fe7063dc083e5",
+    "estimates/sustained_chords_sparse_drums__est_percussive.wav": "3517b5bc60634f5200b9079fb95602f816f3d4e81a7eee2f7877a107f3a21e4f",
+    "estimates/sustained_chords_sparse_drums__est_residual.wav": "8c7003273fd07015a2cee94693558febf4c9f151eea84975337751e682f5a725",
+    "evidence/sustained_chords_sparse_drums__evidence.json": "3ebeb0828d4a925385df1f235eb055d7d3258705810c3f241835c0bf3cc6bdc5",
+    "sources/brush_sweep_over_sustain__true_harmonic.wav": "6ed298bb8dffb30afb1ba71c655dc7749fad7bf8377e837e97305f0ec549abbb",
+    "sources/brush_sweep_over_sustain__true_percussive.wav": "08b92d81e905e153f95c72b878740ab87240874ff8fe68663b32d85763ee24dc",
+    "mixtures/brush_sweep_over_sustain__mixture.wav": "87e979f6725cc5f4edd298512af4b48e23e70029006309a993638b23e991c3a7",
+    "mixtures/brush_sweep_over_sustain__null_derived_percussive.wav": "4fedda586c73f9a59c07319bfe68c0cb0e10ea4d3cba7516e9ff3c2a92358f8b",
+    "reference/brush_sweep_over_sustain__oracle_mask_harmonic.npy": "5de9074af2e7a19860b2454b822da81b16eb03084313485315f9a0212b4b5400",
+    "reference/brush_sweep_over_sustain__oracle_mask_percussive.npy": "a6afcbb2fec118eab90938cdf9372574ce34428c3cad77700a46da53ba1865e7",
+    "estimates/brush_sweep_over_sustain__est_harmonic.wav": "0407a6c6b7eac9057c37dc56fd732f7ae7207cce931486e753d3b2118fe950d8",
+    "estimates/brush_sweep_over_sustain__est_percussive.wav": "22fa41e0c00778c85c636443d0c3d19de2729af958a6bf49391f33aac933229b",
+    "estimates/brush_sweep_over_sustain__est_residual.wav": "652ab4a47aff5f90baa272dc2b5a5108480af2aff9fc638575c951ff162f60dc",
+    "evidence/brush_sweep_over_sustain__evidence.json": "c03ecd460d5de3b40d79f5e1f9e88ee912c362037a22d8082d2878cf12475ae7",
+    "edits/brush_sweep_over_sustain__segment_edit.json": "11597dd5e91eebeb9968d901fd306db068c24dc02a15affbe9626c89d9c21594",
+    "edits/brush_sweep_over_sustain__edited_true_harmonic.wav": "0b3faa2495f18c51a1efd269b86ec15ccd129e916b23e2c2c7218c62f0953676",
+    "edits/brush_sweep_over_sustain__edited_true_percussive.wav": "32e7b541503cb1f706058bad7ea412fb4b95c9315662fe036768c06d4c839a41",
+    "edits/brush_sweep_over_sustain__edited_mixture.wav": "87e979f6725cc5f4edd298512af4b48e23e70029006309a993638b23e991c3a7",
+    "edits/brush_sweep_over_sustain__edited_mask_harmonic.npy": "7e08efd3557529314cb86f778542cc368aa8e66bfd9fdbef1defb016147f5d2c",
+    "edits/brush_sweep_over_sustain__edited_mask_percussive.npy": "c4b5e90f784b2340bd4812f31d06c4dc3263b489222d83bf4eb45a9cfed4b424",
+    "edits/brush_sweep_over_sustain__verification.json": "85134d96f9821de121c69fede6b23e19457ea8a5b6e9f157f130c5d417f6747e",
+    "audition/project.json": "de8ce38d812f99cc71404a41e8cf20979bb8c389fefe65183ac59c54046c4109",
+    "audition/index.html": "c82149c1fc2853567e7e717442b41707b30266d176e72cc856ef7df1ee0847e3"
+  }
+}

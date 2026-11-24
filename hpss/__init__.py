@@ -3,7 +3,7 @@
 from .config import HPSSConfig, STFTConfig
 from .stft import STFT
 from .decompose import HPSSResult, decompose
-from . import signals, scenarios, metrics, viz
+from . import metrics, samplepack, scenarios, signals, viz
 
 __all__ = [
     "HPSSConfig",
@@ -13,6 +13,7 @@ __all__ = [
     "decompose",
     "signals",
     "scenarios",
+    "samplepack",
     "metrics",
     "viz",
 ]

@@ -1,0 +1,18 @@
+{
+  "entry": "brush_sweep_over_sustain",
+  "assignable_layer": "sweep",
+  "owners": [
+    "percussive",
+    "percussive",
+    "harmonic",
+    "percussive",
+    "percussive",
+    "harmonic",
+    "percussive",
+    "percussive"
+  ],
+  "changed_segments": [
+    2,
+    5
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "format": 1,
+  "title": "HPSS decomposition sample pack -- audition project",
+  "entries": [
+    {
+      "name": "sustained_chords_sparse_drums",
+      "notes": "Sustained C/F/G triads under five sparse drum hits; clean morphology case.",
+      "stems": {
+        "true_harmonic": "../sources/sustained_chords_sparse_drums__true_harmonic.wav",
+        "true_percussive": "../sources/sustained_chords_sparse_drums__true_percussive.wav",
+        "mixture": "../mixtures/sustained_chords_sparse_drums__mixture.wav",
+        "null_derived_percussive": "../mixtures/sustained_chords_sparse_drums__null_derived_percussive.wav",
+        "oracle_mask_harmonic": "../reference/sustained_chords_sparse_drums__oracle_mask_harmonic.npy",
+        "oracle_mask_percussive": "../reference/sustained_chords_sparse_drums__oracle_mask_percussive.npy",
+        "est_harmonic": "../estimates/sustained_chords_sparse_drums__est_harmonic.wav",
+        "est_percussive": "../estimates/sustained_chords_sparse_drums__est_percussive.wav",
+        "est_residual": "../estimates/sustained_chords_sparse_drums__est_residual.wav"
+      }
+    },
+    {
+      "name": "brush_sweep_over_sustain",
+      "notes": "Two brush sweeps over an A3/C#4 dyad. The sweep layer is morphologically ambiguous (sustained yet noisy); its 8 segments can be re-owned per stem.",
+      "stems": {
+        "true_harmonic": "../sources/brush_sweep_over_sustain__true_harmonic.wav",
+        "true_percussive": "../sources/brush_sweep_over_sustain__true_percussive.wav",
+        "mixture": "../mixtures/brush_sweep_over_sustain__mixture.wav",
+        "null_derived_percussive": "../mixtures/brush_sweep_over_sustain__null_derived_percussive.wav",
+        "oracle_mask_harmonic": "../reference/brush_sweep_over_sustain__oracle_mask_harmonic.npy",
+        "oracle_mask_percussive": "../reference/brush_sweep_over_sustain__oracle_mask_percussive.npy",
+        "est_harmonic": "../estimates/brush_sweep_over_sustain__est_harmonic.wav",
+        "est_percussive": "../estimates/brush_sweep_over_sustain__est_percussive.wav",
+        "est_residual": "../estimates/brush_sweep_over_sustain__est_residual.wav",
+        "edit_edited_true_harmonic": "../edits/brush_sweep_over_sustain__edited_true_harmonic.wav",
+        "edit_edited_true_percussive": "../edits/brush_sweep_over_sustain__edited_true_percussive.wav",
+        "edit_edited_mixture": "../edits/brush_sweep_over_sustain__edited_mixture.wav",
+        "edit_edited_mask_harmonic": "../edits/brush_sweep_over_sustain__edited_mask_harmonic.npy",
+        "edit_edited_mask_percussive": "../edits/brush_sweep_over_sustain__edited_mask_percussive.npy"
+      }
+    }
+  ]
+}

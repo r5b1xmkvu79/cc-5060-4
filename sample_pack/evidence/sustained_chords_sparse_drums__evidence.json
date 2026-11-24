@@ -1,0 +1,130 @@
+{
+  "entry": "sustained_chords_sparse_drums",
+  "estimated_by": "hpss.decompose.decompose on the shipped mixture; true sources are never substituted into the output",
+  "decomposer_config": {
+    "n_fft": 2048,
+    "hop_length": 512,
+    "win_length": 2048,
+    "window": "hann",
+    "center": true,
+    "pad_mode": "reflect",
+    "kernel_time": 31,
+    "kernel_freq": 31,
+    "mask_kind": "soft",
+    "mask_power": 2.0,
+    "ambiguity_floor_db": -40.0,
+    "shared_policy": "residual",
+    "duplicate_weight": 1.0,
+    "energy_floor_db": -80.0
+  },
+  "diagnostic": {
+    "config": {
+      "n_fft": 2048,
+      "hop_length": 512,
+      "win_length": 2048,
+      "window": "hann",
+      "center": true,
+      "pad_mode": "reflect",
+      "kernel_time": 31,
+      "kernel_freq": 31,
+      "mask_kind": "soft",
+      "mask_power": 2.0,
+      "ambiguity_floor_db": -40.0,
+      "shared_policy": "residual",
+      "duplicate_weight": 1.0,
+      "energy_floor_db": -80.0
+    },
+    "sample_rate": 22050,
+    "duration_s": 5.0,
+    "n_frames": 217,
+    "n_bins": 1025,
+    "mask_sum_max_error": 2.220446049250313e-16,
+    "mask_max_overshoot": 2.220446049250313e-16,
+    "shared_energy_duplicated": 0.004053657338485077,
+    "reconstruction_error_db": -313.3763295787388,
+    "two_component_error_db": -29.40415503605932,
+    "input_energy": 6956.958841413022,
+    "harmonic_energy": 6631.682825752574,
+    "percussive_energy": 63.226588545982736,
+    "residual_energy": 7.980019092114434,
+    "remix_energy_ratio": 1.0,
+    "ambiguous_energy_fraction": 0.011604515551460049,
+    "ambiguous_bin_fraction": 0.006577498033044847,
+    "residual_energy_fraction": 0.0011470556710227165,
+    "frac_ambiguous_to_residual": 1.0
+  },
+  "bss": {
+    "harmonic": {
+      "sdr_db": 25.439455141123624,
+      "sir_db": 41.94313913975671,
+      "sar_db": 25.53797969680229
+    },
+    "percussive": {
+      "sdr_db": 8.62909692521719,
+      "sir_db": 15.628972847970244,
+      "sar_db": 9.712879775489597
+    },
+    "mean_sdr_db": 17.034276033170407,
+    "mean_sir_db": 28.786055993863478,
+    "mean_sar_db": 17.625429736145943
+  },
+  "leakage": {
+    "harmonic": {
+      "self_fraction": 0.9964571029282772,
+      "crosstalk_fraction": 2.8173400509579806e-06,
+      "unexplained_fraction": 0.003540079731671919,
+      "crosstalk_vs_true_percussive_db": -34.87883375098062
+    },
+    "percussive": {
+      "self_fraction": 0.8731414600009806,
+      "crosstalk_fraction": 0.010520876732986505,
+      "unexplained_fraction": 0.1163376632660329,
+      "crosstalk_vs_true_harmonic_db": -40.15906024600143
+    }
+  },
+  "energy": {
+    "input_energy": 6956.958841413022,
+    "true_h_energy": 6900.136887277831,
+    "true_p_energy": 57.45745575088226,
+    "est_h_energy": 6631.682825752574,
+    "est_p_energy": 63.22658854598272,
+    "est_r_energy": 7.980019092114434,
+    "est_h_over_true_h_db": -0.1723395951791155,
+    "est_p_over_true_p_db": 0.4155335837811268,
+    "harmonic_plus_percussive_over_input_db": -0.09541937153774183,
+    "delivered_over_input_db": 0.0,
+    "recomposition_error_db": -313.3763295787388,
+    "two_component_recomposition_error_db": -29.40415503605932,
+    "recomposition_correlation": 1.0,
+    "residual_energy_fraction": 0.0011470556710227165,
+    "residual_over_input_db": -29.404155036059322,
+    "mask_sum_max_abs_error": 2.220446049250313e-16,
+    "mask_max_overshoot": 2.220446049250313e-16
+  },
+  "residual_composition": {
+    "harmonic": 0.11473927931113144,
+    "percussive": 2.2242444633837397e-05,
+    "other": 0.8852384782442347
+  },
+  "mask_quality": {
+    "harmonic": {
+      "corr": 0.7971097360212748,
+      "mae": 0.15180633667909932,
+      "precision": 0.9972382324687801,
+      "recall": 0.7389885807504079,
+      "f1": 0.8489071364077754
+    },
+    "percussive": {
+      "corr": 0.8378413084231879,
+      "mae": 0.12208006903973447,
+      "precision": 0.795415738141406,
+      "recall": 0.9961580282711128,
+      "f1": 0.8845404953092062
+    }
+  },
+  "null_test": {
+    "construction": "null_percussive = mixture - true_harmonic",
+    "in_memory_db": -305.2679152679965,
+    "wav_roundtrip_db": -132.97542578104813
+  }
+}

@@ -117,6 +117,62 @@ def percussive_hit(
     return amplitude * out
 
 
+def brush_sweep(
+    duration: float,
+    sr: int,
+    amplitude: float = 0.3,
+    low_hz: float = 1500.0,
+    high_hz: float = 7000.0,
+    sweep_up: bool = True,
+    swirl_hz: float = 5.0,
+    seed: int = 0,
+) -> np.ndarray:
+    """Drum-brush sweep: a sustained swell of bandpassed noise whose band
+    glides from ``low_hz``-ish to ``high_hz``-ish (or reverse).
+
+    Sustained in time yet broadband like noise, so it is genuinely ambiguous
+    for the median-support HPSS assumption -- the intended use is a stem whose
+    attribution an editor may legitimately reassign segment by segment.
+    """
+    from scipy.signal import butter, sosfiltfilt
+
+    t = _t(duration, sr)
+    n = len(t)
+    rng = np.random.default_rng(seed)
+    noise = rng.standard_normal(n)
+    nyq = sr / 2.0 * 0.95
+    lo_a, hi_a = max(60.0, low_hz), min(nyq, (low_hz * high_hz) ** 0.5)
+    lo_b, hi_b = hi_a, min(nyq, high_hz)
+    sos_a = butter(4, [lo_a, hi_a], btype="band", fs=sr, output="sos")
+    sos_b = butter(4, [max(lo_b, 60.0), max(hi_b, lo_b + 100.0)], btype="band", fs=sr, output="sos")
+    band_a = sosfiltfilt(sos_a, noise)
+    band_b = sosfiltfilt(sos_b, noise)
+    w = 0.5 - 0.5 * np.cos(np.pi * t / max(t[-1], 1e-9))  # 0 -> 1 raised cosine
+    if not sweep_up:
+        w = 1.0 - w
+    out = band_a * (1.0 - w) + band_b * w
+    env = adsr(n, sr, attack=0.35 * duration, decay=0.05, sustain=0.85, release=0.30 * duration)
+    env = env * (0.85 + 0.15 * np.sin(_TWO_PI * swirl_hz * t))
+    out = out * env
+    out /= max(np.max(np.abs(out)), 1e-12)
+    return amplitude * out
+
+
+def place_hits(
+    hits: list[tuple[float, str, float]], duration: float, sr: int, seed: int = 0
+) -> np.ndarray:
+    """Place individual ``percussive_hit`` events: ``(time_s, kind, amplitude)``."""
+    out = np.zeros(int(round(duration * sr)), dtype=np.float64)
+    for i, (t0, kind, amp) in enumerate(hits):
+        hit = percussive_hit(min(0.35, duration - t0), sr, kind, amplitude=amp, seed=seed + i)
+        j = int(round(t0 * sr))
+        if j >= len(out):
+            continue
+        k = min(len(hit), len(out) - j)
+        out[j : j + k] += hit[:k]
+    return out
+
+
 def click_train(times: list[float], duration: float, sr: int, amplitude: float = 0.5, seed: int = 0) -> np.ndarray:
     out = np.zeros(int(round(duration * sr)), dtype=np.float64)
     hit = percussive_hit(0.12, sr, "click", amplitude=amplitude, seed=seed)

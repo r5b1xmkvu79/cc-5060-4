@@ -1,0 +1,64 @@
+{
+  "entry": "brush_sweep_over_sustain",
+  "owners": [
+    "percussive",
+    "percussive",
+    "harmonic",
+    "percussive",
+    "percussive",
+    "harmonic",
+    "percussive",
+    "percussive"
+  ],
+  "changed_segments": [
+    2,
+    5
+  ],
+  "remix_error_db": -323.1821175696595,
+  "phase_cancel_null_db": -313.4544515515563,
+  "mask_sum_max_abs_error": 2.9802322387695312e-08,
+  "scale": 1.3111912463616278,
+  "per_segment_mask_change": [
+    {
+      "index": 0,
+      "owner": "percussive",
+      "mask_change": 0.0
+    },
+    {
+      "index": 1,
+      "owner": "percussive",
+      "mask_change": 0.001068772240887912
+    },
+    {
+      "index": 2,
+      "owner": "harmonic",
+      "mask_change": 0.7910260202024576
+    },
+    {
+      "index": 3,
+      "owner": "percussive",
+      "mask_change": 0.05590936781766243
+    },
+    {
+      "index": 4,
+      "owner": "percussive",
+      "mask_change": 2.2850737442260668e-05
+    },
+    {
+      "index": 5,
+      "owner": "harmonic",
+      "mask_change": 0.7689930431881921
+    },
+    {
+      "index": 6,
+      "owner": "percussive",
+      "mask_change": 0.05082925675539123
+    },
+    {
+      "index": 7,
+      "owner": "percussive",
+      "mask_change": 0.0
+    }
+  ],
+  "ok": true
+}
